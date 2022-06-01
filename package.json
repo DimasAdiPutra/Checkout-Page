@@ -1,0 +1,22 @@
+{
+	"name": "checkout-page",
+	"version": "1.0.0",
+	"description": "Membuat sebuah Checkout Page dengan TailwindCSS",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/DimasAdiPutra/Checkout-Page.git"
+	},
+	"author": "Adi Putra",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/DimasAdiPutra/Checkout-Page/issues"
+	},
+	"homepage": "https://github.com/DimasAdiPutra/Checkout-Page#readme",
+	"devDependencies": {
+		"tailwindcss": "^3.0.24"
+	}
+}
