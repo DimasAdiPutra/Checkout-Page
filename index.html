@@ -18,7 +18,7 @@
 
 <body>
 	<main class="flex w-full font-poppins min-h-screen">
-		<!-- Packages -->
+		<!-- * Packages -->
 		<section class="overflow-y-auto scroll-m-4 flex flex-col w-full xl:w-1/2 bg-blue sticky px-5 py-5">
 			<!-- Back button -->
 			<div class="mb-6 xl:hidden">
@@ -67,11 +67,128 @@
 				</svg></a>
 		</section>
 
-		<!-- Payment details -->
-		<section class="hidden w-1/2 xl:flex py-5 px-16">
-			<h1 class="text-4xl font-bold">Checkout</h1>
-			<div>
-			</div>
+		<!-- * Payment details -->
+		<section class="hidden w-1/2 xl:flex xl:py-5 xl:px-16 flex-col items-center py-7 px-5 font-poppins">
+			<!-- Checkout title -->
+			<h1 class="text-4xl font-bold mb-5 w-full max-w-xl">Checkout</h1>
+
+			<!-- Bill Method -->
+			<section id="bill" class="flex gap-5 flex-col w-full max-w-xl">
+				<!-- Monthly -->
+				<label for="billMonth" class="grid grid-flow-row grid-col-2 w-full max-w-xl py-4 px-5 rounded-xl gap-1 align-end bg-stone-300 cursor-pointer box-border">
+					<h6 class="font-semibold text-lg">Bill Monthly</h6>
+					<input type="radio" name="bill" id="billMonth" class="w-6 h-6 col-start-2 self-center justify-self-end">
+					<p>$20/Month</p>
+				</label>
+				<!-- Yearly -->
+				<label for="billYear" class="grid grid-flow-row grid-col-2 w-full max-w-xl py-4 px-5 rounded-xl gap-1 align-end bg-stone-300 cursor-pointer box-border">
+					<h6 class="font-semibold text-lg">Bill Yearly</h6>
+					<input type="radio" name="bill" id="billYear" class="w-6 h-6 col-start-2 self-center justify-self-end">
+					<p>$15/Month</p>
+				</label>
+			</section>
+
+			<!-- Contact Info -->
+			<section class="mt-6 w-full max-w-xl">
+				<h2 class="text-3xl font-semibold mb-3">Contact Info</h2>
+				<form class="flex flex-col gap-4">
+					<!-- Number Phone -->
+					<div class="flex flex-col gap-1">
+						<label for="phone" class="font-semibold">Your Phone</label>
+						<input type="tel" name="phone" placeholder="Using your Country code" id="phone" class="form-input w-full max-w-xl bg-white border-2 border-solid border-text2 rounded-md text-sm font-light">
+					</div>
+					<!-- Email -->
+					<div class="flex flex-col gap-1">
+						<label for="email" class="font-semibold">Your Email</label>
+						<input type="email" name="email" placeholder="example@example.com" id="email" class="form-input w-full max-w-xl bg-white border-2 border-solid border-text2 rounded-md text-sm font-light">
+					</div>
+				</form>
+			</section>
+
+			<!-- Payment Method -->
+			<section class="mt-6 w-full max-w-xl">
+				<h2 class="text-3xl font-semibold mb-3">Payment Method</h2>
+				<div class="flex flex-col gap-4">
+					<!-- paypal method -->
+					<a href="#" class="flex justify-center items-center w-full rounded-md bg-white border-2 border-solid border-text1 py-1 h-12 box-border max-w-xl">
+						<img src="../img/paypal.svg" alt="paypal">
+					</a>
+					<!-- google payment -->
+					<a href="#" class="flex justify-center items-center w-full rounded-md bg-text1 py-1 h-12 max-w-xl">
+						<img src="../img/googlepay.svg" alt="google" class="-mt-3">
+					</a>
+
+					<!-- manual payment -->
+					<form action="" class="grid border-text1 border-solid border-2 py-3 px-5 rounded-md gap-5 mt-6 max-w-xl">
+						<!-- Cardholder Name -->
+						<div class="flex flex-col gap-4">
+							<label for="cardholder" class="font-semibold">Cardholder Name</label>
+							<input type="text" name="cardholder" id="cardholder" class="form-input w-full max-w-xl bg-white border-2 border-solid border-text2 rounded-md text-sm font-light">
+						</div>
+						<!-- Card Number -->
+						<div class="flex flex-col gap-4">
+							<label for="cardnumber" class="font-semibold">Card Number</label>
+							<input type="number" name="cardnumber" placeholder="4111 1111 1111 1111" id="cardnumber" class="form-input appearance-textfield w-full max-w-xl bg-white border-2 border-solid border-text2 rounded-md text-sm font-light">
+						</div>
+						<!-- Expiration -->
+						<div class="flex flex-col gap-4">
+							<label for="expiration" class="font-semibold">Expiration</label>
+							<input type="number" name="expiration" placeholder="Mm/Yy" id="expiration" class="form-input appearance-textfield w-full max-w-xl bg-white border-2 border-solid border-text2 rounded-md text-sm font-light">
+						</div>
+						<!-- CVV -->
+						<div class="flex flex-col gap-4">
+							<label for="cvv" class="font-semibold">CVV</label>
+							<input type="number" name="cvv" placeholder="123" id="cvv" class="form-input appearance-textfield w-full max-w-xl bg-white border-2 border-solid border-text2 rounded-md text-sm font-light">
+						</div>
+						<!-- Postal Code -->
+						<div class="flex flex-col gap-4">
+							<label for="postalCode" class="font-semibold">Postal Code</label>
+							<input type="number" name="postalCode" placeholder="Postal or ZIP Code" id="postalCode" class="form-input appearance-textfield w-full max-w-xl bg-white border-2 border-solid border-text2 rounded-md text-sm font-light">
+						</div>
+					</form>
+				</div>
+			</section>
+
+			<hr class="my-6 h-[3px] bg-text1 rounded w-full max-w-xl">
+
+			<!-- Total -->
+			<section class="flex flex-col gap-2 w-full max-w-xl">
+				<!-- Subtotal -->
+				<div class="font-semibold flex justify-between w-full">
+					<h6 class="text-lg">Subtotal</h6>
+					<p>$<span id="subtotal">240.00</span></p>
+				</div>
+				<!-- Discounts -->
+				<div class="flex flex-col gap-2 text-blue">
+					<div class="flex justify-between w-full">
+						<h6>Yearly Discount</h6>
+						<p>$<span>60.00</span></p>
+					</div>
+					<div class="flex justify-between w-full">
+						<h6>First Payment 50% Discount</h6>
+						<p>$<span>90.00</span></p>
+					</div>
+				</div>
+				<!-- Total -->
+				<div class="font-semibold flex justify-between w-full">
+					<h5>Total</h5>
+					<p class="flex">
+						<span class="inline-flex justify-center items-center w-fit h-fit px-1 uppercase bg-text1 rounded text-white text-[6px] font-normal">usd</span>
+						$<span>90.00</span>
+					</p>
+				</div>
+				<!-- Warning -->
+				<p class="text-xs">
+					All sales are charged in USD and all sales are final. You will be charged $180.00 USD
+					immediately. You will be charged $180.00 USD every year thereafter while the subscription is active. Cancel
+					any
+					time.
+				</p>
+				<!-- Checkout button -->
+				<button type="submit" class="flex w-24 h-9 justify-center items-center font-semibold mt-4 bg-blue text-white text-sm rounded-md">
+					Checkout
+				</button>
+			</section>
 		</section>
 	</main>
 

@@ -1118,4 +1118,14 @@ select {
   .xl\:w-1\/2 {
     width: 50%;
   }
+
+  .xl\:py-5 {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .xl\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
