@@ -1,15 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Checkout page</title>
 
-		<!-- tailwind -->
-		<link rel="stylesheet" href="dist/style.css" />
-	</head>
-	<body>
-		<h1 class="text-xl">Hello</h1>
-	</body>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Checkout page</title>
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+	<!-- tailwindcss -->
+	<link rel="stylesheet" href="dist/style.css" />
+</head>
+
+<body>
+	<main class="flex w-full font-poppins min-h-screen">
+		<!-- Packages -->
+		<section class="overflow-y-auto scroll-m-4 flex flex-col w-full xl:w-1/2 bg-blue sticky px-5 py-5">
+			<!-- Back button -->
+			<div class="mb-6 xl:hidden">
+				<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M21 14C21 14.2321 20.9078 14.4546 20.7437 14.6187C20.5796 14.7828 20.3571 14.875 20.125 14.875H9.98725L13.7445 18.6305C13.8259 18.7119 13.8904 18.8084 13.9344 18.9147C13.9784 19.021 14.0011 19.135 14.0011 19.25C14.0011 19.3651 13.9784 19.479 13.9344 19.5853C13.8904 19.6916 13.8259 19.7882 13.7445 19.8695C13.6631 19.9509 13.5666 20.0154 13.4603 20.0594C13.354 20.1035 13.2401 20.1261 13.125 20.1261C13.0099 20.1261 12.896 20.1035 12.7897 20.0594C12.6834 20.0154 12.5869 19.9509 12.5055 19.8695L7.2555 14.6195C7.17401 14.5382 7.10936 14.4417 7.06525 14.3354C7.02114 14.2291 6.99844 14.1151 6.99844 14C6.99844 13.8849 7.02114 13.771 7.06525 13.6646C7.10936 13.5583 7.17401 13.4618 7.2555 13.3805L12.5055 8.13051C12.5869 8.04915 12.6834 7.98462 12.7897 7.94059C12.896 7.89656 13.0099 7.8739 13.125 7.8739C13.2401 7.8739 13.354 7.89656 13.4603 7.94059C13.5666 7.98462 13.6631 8.04915 13.7445 8.13051C13.9088 8.29481 14.0011 8.51765 14.0011 8.75001C14.0011 8.86506 13.9784 8.97898 13.9344 9.08528C13.8904 9.19157 13.8259 9.28815 13.7445 9.36951L9.98725 13.125H20.125C20.3571 13.125 20.5796 13.2172 20.7437 13.3813C20.9078 13.5454 21 13.7679 21 14V14Z" fill="#FAFDFF"/>
+					</svg>
+			</div>
+			<div class="w-full flex flex-col justify-center">
+				<!-- illustration -->
+				<img src="img/illustration.svg" alt="Illustrations book" class="w-3/4 max-w-xs mb-6 mx-auto" />
+				<!-- package list -->
+				<div id="package" class="flex flex-col gap-4 mx-auto">
+					<!-- package 1 -->
+					<div
+						class="grid grid-flow-row grid-col-2 w-full max-w-xl py-4 px-5 rounded-xl gap-1 align-end bg-white cursor-pointer box-border">
+						<h3 class="order-1 col-span-1 text-xl font-semibold">Free Trial</h3>
+						<p class="order-3 col-span-2">Free 30 day for new Reader</p>
+						<p class="order-2 col-span-1 justify-self-end text-xs"><span class="text-lg font-medium">$0</span>/month</p>
+					</div>
+					<!-- package 2 -->
+					<div
+						class="grid grid-flow-row grid-col-2 w-full max-w-xl py-4 px-5 rounded-xl gap-1 align-end bg-white cursor-pointer box-border">
+						<h3 class="order-1 col-span-1 text-xl font-semibold">Personal</h3>
+						<p class="order-3 col-span-2">Suitable for those of you who like to read</p>
+						<p class="order-2 col-span-1 justify-self-end text-xs"><span class="text-lg font-medium">$20</span>/month
+						</p>
+					</div>
+					<!-- package 3 -->
+					<div
+						class="grid grid-flow-row grid-col-2 w-full max-w-xl py-4 px-5 rounded-xl gap-1 align-end bg-white cursor-pointer box-border">
+						<h3 class="order-1 col-span-1 text-xl font-semibold">Bussiness</h3>
+						<p class="order-3 col-span-2">You can resell the books you have purchased here with terms of service</p>
+						<p class="order-2 col-span-1 justify-self-end text-xs"><span class="text-lg font-medium">$50</span>/month
+						</p>
+					</div>
+					<!-- Voucher -->
+					<div>
+						<label for="voucher" class="text-white">*Voucher Code</label><br>
+						<input type="number" name="voucher" id="voucher" minlength="16" maxlength="16" class="form-input w-full max-w-xl bg-white border-2 border-solid border-text2 rounded-md">
+					</div>
+				</div>
+			</div>
+			<!-- next -->
+			<a href="mobile/index.html" class="text-white self-end mt-2 xl:hidden">Next <svg class="rotate-180 inline-block" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M21 14C21 14.2321 20.9078 14.4546 20.7437 14.6187C20.5796 14.7828 20.3571 14.875 20.125 14.875H9.98725L13.7445 18.6305C13.8259 18.7119 13.8904 18.8084 13.9344 18.9147C13.9784 19.021 14.0011 19.135 14.0011 19.25C14.0011 19.3651 13.9784 19.479 13.9344 19.5853C13.8904 19.6916 13.8259 19.7882 13.7445 19.8695C13.6631 19.9509 13.5666 20.0154 13.4603 20.0594C13.354 20.1035 13.2401 20.1261 13.125 20.1261C13.0099 20.1261 12.896 20.1035 12.7897 20.0594C12.6834 20.0154 12.5869 19.9509 12.5055 19.8695L7.2555 14.6195C7.17401 14.5382 7.10936 14.4417 7.06525 14.3354C7.02114 14.2291 6.99844 14.1151 6.99844 14C6.99844 13.8849 7.02114 13.771 7.06525 13.6646C7.10936 13.5583 7.17401 13.4618 7.2555 13.3805L12.5055 8.13051C12.5869 8.04915 12.6834 7.98462 12.7897 7.94059C12.896 7.89656 13.0099 7.8739 13.125 7.8739C13.2401 7.8739 13.354 7.89656 13.4603 7.94059C13.5666 7.98462 13.6631 8.04915 13.7445 8.13051C13.9088 8.29481 14.0011 8.51765 14.0011 8.75001C14.0011 8.86506 13.9784 8.97898 13.9344 9.08528C13.8904 9.19157 13.8259 9.28815 13.7445 9.36951L9.98725 13.125H20.125C20.3571 13.125 20.5796 13.2172 20.7437 13.3813C20.9078 13.5454 21 13.7679 21 14V14Z" fill="#FAFDFF"/>
+				</svg></a>
+		</section>
+
+		<!-- Payment details -->
+		<section class="hidden w-1/2 xl:flex py-5 px-16">
+			<h1 class="text-4xl font-bold">Checkout</h1>
+			<div>
+			</div>
+		</section>
+	</main>
+
+	<!-- Scripts -->
+	<script src="dist/script.js"></script>
+</body>
+
 </html>

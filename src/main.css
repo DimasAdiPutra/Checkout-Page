@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.selected {
+	border: 2px solid #413830;
+}
+
+.bill-select {
+	background-color: #fafdff;
+	border: 2px solid #413830;
+}
+
+.appearance-textfield {
+	-webkit-appearance: textfield;
+	-moz-appearance: textfield;
+	appearance: textfield;
+}
